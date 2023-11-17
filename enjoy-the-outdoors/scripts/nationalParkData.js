@@ -6953,8 +6953,8 @@ locationRadioBtn.addEventListener("click", () => {
         pageText.innerHTML = '';
         dropDownText.innerHTML = '';
         //searchType is the function, arguement is placed inside parenthesis .. this calls the function to do its thing
-         searchType('location');
-     }
+        searchType('location');
+    }
 });
 
 parkTypeRadioBtn.addEventListener("click", () => {
@@ -6967,7 +6967,7 @@ parkTypeRadioBtn.addEventListener("click", () => {
         dropDownText.innerHTML = '';
         //searchType is the function, arguement is placed inside parenthesis 
         searchType('parkType');
-     }
+    }
 });
 
 function searchType(choice) {
@@ -6995,17 +6995,15 @@ function searchType(choice) {
             let filteredParkResults = nationalParksArray.filter(function (parks) {
                 return parks.State === result;
             });
-            list = "<ul>";
+            list = "";
             filteredParkResults.forEach(function (arrayItem) {
                 console.log(arrayItem.LocationName);
                 // string interpolation 
-                list+=`<li style="font-weight: bold;">${arrayItem.LocationName}</li>`
-                list+=`<ul>`
-                list+=`<li>${((arrayItem.Address == 0)? '' : `${arrayItem.Address},`) } ${((arrayItem.City == 0)? '' : `${arrayItem.City},`)} ${((arrayItem.State == 0)? '' : `${arrayItem.State},`)} ${((arrayItem.ZipCode == 0)? '' : `${arrayItem.ZipCode}`)}</li>`
-                list+=`<li class="mb-5">${((arrayItem.Phone == 0)? 'No Phone Number Available' : `${arrayItem.Phone}`)}</li>`
-                list+=`</ul>`
+                list += `<h4 style="font-weight: bold;">${arrayItem.LocationName}</h4>`
+                list += `<p>${((arrayItem.Address == 0) ? '' : `${arrayItem.Address},`)} ${((arrayItem.City == 0) ? '' : `${arrayItem.City},`)} ${((arrayItem.State == 0) ? '' : `${arrayItem.State},`)} ${((arrayItem.ZipCode == 0) ? '' : `${arrayItem.ZipCode}`)}</p>`
+                list += `<p class="mb-5">${((arrayItem.Phone == 0) ? 'No Phone Number Available' : `${arrayItem.Phone}`)}</p>`
             })
-            list+="</ul>"
+            list += ""
             console.log(list);
             let emptyLocationName = document.getElementById("location-name");
             console.log(emptyLocationName);
@@ -7030,17 +7028,16 @@ function searchType(choice) {
                 return types.LocationName.includes(result);
                 console.log(types.LocationName.includes(result));
             });
-            list = "<ul>";
+            list = "";
             filteredParkResults.forEach(function (arrayItem) {
                 console.log(arrayItem.LocationName);
                 // string interpolation 
-                list+=`<li style="font-weight: bold;">${arrayItem.LocationName}</li>`
-                list+=`<ul>`
-                list+=`<li>${((arrayItem.Address == 0)? '' : `${arrayItem.Address},`) } ${((arrayItem.City == 0)? '' : `${arrayItem.City},`)} ${((arrayItem.State == 0)? '' : `${arrayItem.State},`)} ${((arrayItem.ZipCode == 0)? '' : `${arrayItem.ZipCode}`)}</li>`
-                list+=`<li class="mb-5">${((arrayItem.Phone == 0)? 'No Phone Number Available' : `${arrayItem.Phone}`)}</li>`
-                list+=`</ul>`
+                list += `<h4 style="font-weight: bold;">${arrayItem.LocationName}</h4>`
+
+                list += `<p>${((arrayItem.Address == 0) ? '' : `${arrayItem.Address},`)} ${((arrayItem.City == 0) ? '' : `${arrayItem.City},`)} ${((arrayItem.State == 0) ? '' : `${arrayItem.State},`)} ${((arrayItem.ZipCode == 0) ? '' : `${arrayItem.ZipCode}`)}</p>`
+                list += `<p class="mb-5">${((arrayItem.Phone == 0) ? 'No Phone Number Available' : `${arrayItem.Phone}`)}</p>`
             })
-            list+="</ul>"
+            list += ""
             console.log(list);
             let emptyLocationName = document.getElementById("location-name");
             console.log(emptyLocationName);

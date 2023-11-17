@@ -534,7 +534,7 @@ let searchByMountain = document.getElementById("mountain");
 //     console.log(xyz.name)
 // });
 //for of loop :D .. loop iterates thru array to do it's business
-for(var item of mountainsArray){ // declared here .. looped through
+for (var item of mountainsArray) { // declared here .. looped through
     console.log(item.name);
     //creates new option in drop down
     let option = document.createElement("option");
@@ -561,11 +561,11 @@ searchByMountain.addEventListener("change", () => {
     FilteredMountainResults.forEach(function (arrayItem) {
         // ${} string interpolation 
         // += concatenating into existing string.. h4, and two p elements
-        list+=`<h4 style="font-weight: bold; margin-bottom: 10px">${arrayItem.name}</h4>`
-        list+=`<p>The elevation of this mountain is: ${arrayItem.elevation} ft. <p>`
-        list+=`<p>${arrayItem.desc}</p>`
+        list += `<h4 style="font-weight: bold; margin-bottom: 10px">${arrayItem.name}</h4>`
+        list += `<p>The elevation of this mountain is: ${arrayItem.elevation} ft. <p>`
+        list += `<p>${arrayItem.desc}</p>`
     })
-    list+="</ul>"
+    list += ""
     //grab div element to place text in
     let emptyMountainInfo = document.getElementById("mountain-info");
     //place text into div
