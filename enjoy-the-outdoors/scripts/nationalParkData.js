@@ -6932,7 +6932,6 @@ const nationalParksArray = [
         }
     }
 ]
-//Grabbing radio btn
 
 let form = document.querySelector('form');
 let btn = document.querySelector('button');
@@ -6941,9 +6940,9 @@ let response = document.querySelector('input');
 let locationRadioBtn = document.getElementById('location');
 let parkTypeRadioBtn = document.getElementById('parkType');
 
-//response.addEventListener
-// locationRadioBtn.addEventListener('click', console.log("click"));
+//      FUNCTION 1
 locationRadioBtn.addEventListener("click", () => {
+    //conditional statement
     if (locationRadioBtn.checked) {
         //make sure div for text is cleared 
         let pageText = document.getElementById("location-name");
@@ -6957,7 +6956,9 @@ locationRadioBtn.addEventListener("click", () => {
     }
 });
 
+//      FUNCTION 2
 parkTypeRadioBtn.addEventListener("click", () => {
+    //conditional statement
     if (parkTypeRadioBtn.checked) {
         //make sure div for text is cleared 
         let pageText = document.getElementById("location-name");
@@ -6970,81 +6971,107 @@ parkTypeRadioBtn.addEventListener("click", () => {
     }
 });
 
+
+
+
+
+//      FUNCTION 3
 function searchType(choice) {
-    // let choice = form.querySelector('input[name="option"]:checked')
     var list;
+    //conditional statement
     if (!choice) {
         para.textContent = 'Please select a search type.';
         return;
     }
+
+//          NESTED FUNCTION 1
+    // if i choose location then .. 
+    //conditional statement
     if (choice === 'location') {
         para.textContent = 'Select Location';
-        // Grab select element from DOM
+        // Grab location-select id from select element (drop down)
         let searchByLocation = document.getElementById("location-select");
+        //moving through array to append options!
+        //for each loop
         locationsArray.forEach(state => {
             let option = document.createElement("option");
             option.value = state;
             option.text = state;
             searchByLocation.add(option);
         });
+
         let locationText = document.getElementById("park-info");
-        //Listening for the change in dropdown 1
+
+                //          ANON FUNCTION 1
+        //Listening for the change in dropdown 1         
         searchByLocation.addEventListener("change", () => {
-            //Putting selected value from DD1 into a variable 
+            //Putting selected value from DD into a variable 
             let result = searchByLocation.value;
+            //creating another array
             let filteredParkResults = nationalParksArray.filter(function (parks) {
                 return parks.State === result;
             });
+            //empty string initialized
             list = "";
+            //interates through my new array 
             filteredParkResults.forEach(function (arrayItem) {
                 console.log(arrayItem.LocationName);
-                // string interpolation 
+                // string interpolation ${}
                 list += `<h4 style="font-weight: bold;">${arrayItem.LocationName}</h4>`
                 list += `<p>${((arrayItem.Address == 0) ? '' : `${arrayItem.Address},`)} ${((arrayItem.City == 0) ? '' : `${arrayItem.City},`)} ${((arrayItem.State == 0) ? '' : `${arrayItem.State},`)} ${((arrayItem.ZipCode == 0) ? '' : `${arrayItem.ZipCode}`)}</p>`
                 list += `<p class="mb-5">${((arrayItem.Phone == 0) ? 'No Phone Number Available' : `${arrayItem.Phone}`)}</p>`
             })
-            list += ""
             console.log(list);
+            //grabs div with id "location-name" to display text
             let emptyLocationName = document.getElementById("location-name");
             console.log(emptyLocationName);
+            //sets inner HTML of div with list string created in loop
             emptyLocationName.innerHTML = list;
         });
-    }
+    };
+
+//          NESTED FUNCTION 2
+    //if i chose parktype then .. 
     if (choice === 'parkType') {
         para.textContent = 'Select Park Type';
-        // Grab select element from DOM
+        // Grab location-select id from select element
         let searchByParkType = document.getElementById("location-select");
+        //moving through array to append options!
         parkTypesArray.forEach(typelol => {
             let option = document.createElement("option");
             option.value = typelol;
             option.text = typelol;
             searchByParkType.add(option);
         });
+
+                //          ANON FUNCTION 2
         //Listening for the change in dropdown 1
         searchByParkType.addEventListener("change", () => {
             //Putting selected value from drop down into a variable 
             let result = searchByParkType.value;
+            //creating another array
             let filteredParkResults = nationalParksArray.filter(function (types) {
                 return types.LocationName.includes(result);
-                console.log(types.LocationName.includes(result));
             });
+            //empty string initialized
             list = "";
+            //iterates through our new array
             filteredParkResults.forEach(function (arrayItem) {
                 console.log(arrayItem.LocationName);
                 // string interpolation 
                 list += `<h4 style="font-weight: bold;">${arrayItem.LocationName}</h4>`
-
                 list += `<p>${((arrayItem.Address == 0) ? '' : `${arrayItem.Address},`)} ${((arrayItem.City == 0) ? '' : `${arrayItem.City},`)} ${((arrayItem.State == 0) ? '' : `${arrayItem.State},`)} ${((arrayItem.ZipCode == 0) ? '' : `${arrayItem.ZipCode}`)}</p>`
                 list += `<p class="mb-5">${((arrayItem.Phone == 0) ? 'No Phone Number Available' : `${arrayItem.Phone}`)}</p>`
-            })
-            list += ""
+            });
             console.log(list);
+            //grabs div with id "location-name" to display text
             let emptyLocationName = document.getElementById("location-name");
             console.log(emptyLocationName);
+            //sets inner HTML of div with list string created in loop            
             emptyLocationName.innerHTML = list;
         });
-    }
-}
+    };
+};
 
 
 
