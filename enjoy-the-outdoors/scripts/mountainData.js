@@ -528,3 +528,47 @@ const mountainsArray = [
         }
     }
 ]
+//grabs drop down
+let searchByMountain = document.getElementById("mountain");
+// mountainsArray.forEach(function(xyz){
+//     console.log(xyz.name)
+// });
+//for of loop :D .. loop iterates thru array to do it's business
+for(var item of mountainsArray){ // declared here .. looped through
+    console.log(item.name);
+    //creates new option in drop down
+    let option = document.createElement("option");
+    //setting value attribute of new option element as name in array 
+    option.value = item.name;
+    //creating text to be displayed as item.name of current object
+    option.text = item.name;
+    //adds newly created option into searchByMountain dropdown
+    searchByMountain.add(option);
+}
+
+let MountainText = document.getElementById("mountain-info");
+//Listening for the change in dropdown 1
+searchByMountain.addEventListener("change", () => {
+    //value selected by user defined by the value
+    let userSelection = searchByMountain.value;
+    //new array created. needs to pass the vibe check (===), mountains argument represents each element in original array
+    let FilteredMountainResults = mountainsArray.filter(function (mountains) {
+        return mountains.name === userSelection;
+    });
+    //initializes string in HTML
+    let list = '';
+    //Looping thru our new array ...
+    FilteredMountainResults.forEach(function (arrayItem) {
+        // ${} string interpolation 
+        // += concatenating into existing string.. h4, and two p elements
+        list+=`<h4 style="font-weight: bold; margin-bottom: 10px">${arrayItem.name}</h4>`
+        list+=`<p>The elevation of this mountain is: ${arrayItem.elevation} ft. <p>`
+        list+=`<p>${arrayItem.desc}</p>`
+    })
+    list+="</ul>"
+    //grab div element to place text in
+    let emptyMountainInfo = document.getElementById("mountain-info");
+    //place text into div
+    emptyMountainInfo.innerHTML = list;
+});
+
