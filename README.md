@@ -4,9 +4,9 @@
 <p align="center"; text=15px;>
  This capstone project features JavaScript, Bootstrap, HTML and CSS, with it's main focus being JavaScript.
  <br>
- Given a 6,000 line long array with all the national parks in the United States and their information listed, I was able to successfully create two quick and straight forward ways for users to navigate through the array. Users are able to find the park of their dreams through two categories: location (state) or park type. 
+ Given a 6,000 line long array with all the national parks in the United States and their information listed, I was able to successfully create two quick and straight forward ways for users to navigate through the array. Users are able to find the park of their dreams through two categories: location (state/territory) or park type. 
  <br>
- Additionally, I have given users the opportunity to easily search through all mountains in the United States by their location (State or terriorty). Upon selection in a drop down menu, every mountain in it's respective location is listed along with it's elevation and a description. 
+ Additionally, I have given users the opportunity to easily search through an array listing all mountains in the United States by their location (state/terriorty) using a similar method.  
   In this code, you can witness flawless execution of event handling, function declaration, array operations, string inerpolation and HTML Manipulation.
  See below for snippets of my webpage. 
 </p>
