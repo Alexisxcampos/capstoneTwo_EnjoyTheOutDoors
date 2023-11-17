@@ -1,12 +1,12 @@
 <h1 align="center";>capstoneTwo_EnjoyTheOutDoors</h1>
 
 <h2 align="center">Welcome!</h2>
-<p align="center"; text=15px;>
+<p align="center">
  This capstone project features JavaScript, Bootstrap, HTML and CSS, with it's main focus being JavaScript.
  <br>
- Given a 6,000 line long array with all the national parks in the United States and their information listed, I was able to successfully create two quick and straight forward ways for users to navigate through the array. Users are able to find the park of their dreams through two categories: location (state/territory) or park type. 
+ Given a 6,000 line long array with all the national parks in the United States and their information, I was able to successfully create two quick and straight forward ways for users to navigate through the array. Users are able to find the park of their dreams through two categories: location (state/territory) or park type. 
  <br>
- Additionally, I have given users the opportunity to easily search through an array listing all mountains in the United States by their location (state/terriorty) using a similar method.  
+ Additionally, I have given users the opportunity to easily search through an array listing all mountains in the United States using a similar method.  
   In this code, you can witness flawless execution of event handling, function declaration, array operations, string inerpolation and HTML Manipulation.
  See below for snippets of my webpage. 
 </p>
@@ -24,7 +24,7 @@
  <b>Displayed below:</b> United States National Parks Index Page.
  <br>
  <b>Comments:</b> Looks pretty, right? Thanks. Behind the scenes, two event listener were made for each radio button. Upon click, there is a different function set to run for each radio button. These functions append the appropriate dropdown options to match the selected category. 
-  <img src=https://github.com/Alexisxcampos/capstoneTwo_EnjoyTheOutDoors/blob/main/readme/NPSP.JPG?raw=true" alt="United States National Parks Index"/>
+  <img src="https://github.com/Alexisxcampos/capstoneTwo_EnjoyTheOutDoors/blob/main/readme/NPSP.JPG?raw=true" alt="United States National Parks Index"/>
 </p>
 <br>
 <br>
@@ -40,7 +40,7 @@
  <b>Displayed below:</b> United States Mountain Information Page
  <br>
  <b>Comments:</b> The user is prompted to select a mountain from the drop down. 
-  <img src="https://github.com/Alexisxcampos/capstoneTwo_EnjoyTheOutDoors/blob/main/readme/USMII.JPG" alt="United States Mountain Information Index"/>
+  <img src="https://github.com/Alexisxcampos/capstoneTwo_EnjoyTheOutDoors/blob/main/readme/USMII.JPG?raw=true" alt="United States Mountain Information Index"/>
 </p>
 <br>
 <br>
