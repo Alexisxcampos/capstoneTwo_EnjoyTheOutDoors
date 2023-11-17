@@ -15,7 +15,7 @@
 <p align="center">
  <b>Displayed below:</b> Home page
  <br>
- <b>Comments:</b> JavaScript is a new beast for me to conquer. The majority of my alloted time for this project went towards building functions and troubleshooting them.
+ <b>Comments:</b> JavaScript is a new beast for me to conquer. The majority of my alloted time for this project went towards building and troubleshooting functions
   <img src="https://github.com/Alexisxcampos/capstoneTwo_EnjoyTheOutDoors/blob/main/readme/index.JPG?raw=true" alt="Home Page of capstoneTwo"/>
 </p>
 <br>
